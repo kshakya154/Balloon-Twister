@@ -10,7 +10,7 @@ function Testimonial() {
           </h2>
 
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-            <blockquote className="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
+            <blockquote className="rounded-lg bg-blue-700 p-6 shadow-xs sm:p-8">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -19,7 +19,7 @@ function Testimonial() {
                 />
 
                 <div>
-                  <div className="flex justify-center gap-0.5 text-green-500">
+                  <div className="flex justify-center gap-0.5 text-yellow-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="size-5"
@@ -62,13 +62,13 @@ function Testimonial() {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-white">
                     Aarav Sharma
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-gray-200">
                 Absolutely stunning! The balloon decorations for my daughter's
                 5th birthday were beyond my expectations. The colors, the
                 arrangement, and the creativity were just perfect. It made the
@@ -76,7 +76,7 @@ function Testimonial() {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
+            <blockquote className="rounded-lg bg-blue-700 p-6 shadow-xs sm:p-8">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -85,7 +85,7 @@ function Testimonial() {
                 />
 
                 <div>
-                  <div className="flex justify-center gap-0.5 text-green-500">
+                  <div className="flex justify-center gap-0.5 text-yellow-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="size-5"
@@ -128,13 +128,13 @@ function Testimonial() {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-white">
                     Rohan Mehta
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-gray-200">
                 Professional and impressive! We hired them for our company’s
                 anniversary event, and the balloon decor added such a classy
                 touch. The team was punctual and worked efficiently. Highly
@@ -142,7 +142,7 @@ function Testimonial() {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
+            <blockquote className="rounded-lg bg-blue-700 p-6 shadow-xs sm:p-8">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -151,7 +151,7 @@ function Testimonial() {
                 />
 
                 <div>
-                  <div className="flex justify-center gap-0.5 text-green-500">
+                  <div className="flex justify-center gap-0.5 text-yellow-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="size-5"
@@ -194,13 +194,13 @@ function Testimonial() {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-white">
                     Vikram Joshi
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-gray-200">
                 The balloon arch and backdrop were exactly what I envisioned for
                 my baby shower! It was elegant and beautifully designed.
                 Everyone kept asking who did the decorations. Thank you for

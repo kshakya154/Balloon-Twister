@@ -28,7 +28,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-lg p-8 bg-white bg-opacity-30 backdrop-blur-lg shadow-2xl rounded-3xl"
+        className="w-full max-w-lg p-8 bg-white bg-opacity-30 backdrop-blur-2xl shadow-2xl rounded-2xl"
       >
         <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-6">
           Get in Touch
@@ -39,6 +39,7 @@ export default function Contact() {
               Name
             </label>
             <input
+              placeholder="Enetr your name"
               {...register("name", { required: "Name is required" })}
               className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-50 bg-opacity-50 backdrop-blur-md"
             />
@@ -52,6 +53,7 @@ export default function Contact() {
               Email
             </label>
             <input
+              placeholder="Enter your email"
               type="email"
               {...register("email", {
                 required: "Email is required",
@@ -97,6 +99,7 @@ export default function Contact() {
               Message
             </label>
             <textarea
+              placeholder="Enter message"
               {...register("message", { required: "Message is required" })}
               className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-50 bg-opacity-50 backdrop-blur-md"
               rows="4"

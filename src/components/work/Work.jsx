@@ -16,21 +16,21 @@ function Work() {
             </div>
             <div>
               <img
-                src="https://plus.unsplash.com/premium_photo-1682310433365-5412bb4b171b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFsbG9vbiUyMGRlY29yYXRpb258ZW58MHx8MHx8fDA%3D"
+                src="https://media.istockphoto.com/id/1163718652/photo/delicious-wedding-reception-birthday-cake-on-a-background-balloons-party-decor-copy-space.jpg?s=612x612&w=0&k=20&c=Zml6qzgFd3sH7KQ4uFWKdqpy5qpKVKpVAV6xwVHIiyw="
                 className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom"
                 alt="Image 2"
               />
             </div>
             <div>
               <img
-                src="https://plus.unsplash.com/premium_photo-1682310433365-5412bb4b171b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFsbG9vbiUyMGRlY29yYXRpb258ZW58MHx8MHx8fDA%3D"
+                src="https://media.istockphoto.com/id/1405876768/photo/decoration-for-a-childrens-party.jpg?s=612x612&w=0&k=20&c=7FBBE35SJ864kOr1D39VWxAWGHQzDb-H0l5IH0KG8d0="
                 className="rounded-xl rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom"
                 alt="Image 3"
               />
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1604668915840-580c30026e5f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFsbG9vbiUyMGRlY29yYXRpb258ZW58MHx8MHx8fDA%3D"
+                src="https://media.istockphoto.com/id/1482729972/photo/baby-shower-party-decor-photo-zone-arch-with-pink-and-blue-balloons-cubes-for-gender-party.jpg?s=612x612&w=0&k=20&c=MDu-moVbe6vKkxLjQn3Rh0jmqIYSHUmuYmaXpQ0OKvc="
                 className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom"
                 alt="Image 4"
               />

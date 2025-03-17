@@ -61,7 +61,7 @@ function Services() {
                     height="486"
                     className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                     style={{ color: "transparent" }}
-                    src="https://images.unsplash.com/photo-1569144157591-c60f3f82f137"
+                    src="https://media.istockphoto.com/id/1352398824/photo/birthday-cake-on-a-background-balloons-party-decor-copy-space-trendy-cake-delicious-wedding.jpg?s=612x612&w=0&k=20&c=T4wlEs_JmC2XOMsCBSzTCBmp7bKRHbCkwjs4RlZpPjU="
                   />
                 </div>
               </div>
@@ -120,7 +120,7 @@ function Services() {
                     height="486"
                     className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
                     style={{ color: "transparent" }}
-                    src="https://images.unsplash.com/photo-1599134842279-fe807d23316e"
+                    src="https://media.istockphoto.com/id/479977238/photo/table-setting-for-an-event-party-or-wedding-reception.jpg?s=612x612&w=0&k=20&c=yIKLzW7wMydqmuItTTtUGS5cYTmrRGy0rXk81AltdTA="
                   />
                 </div>
               </div>
@@ -178,7 +178,7 @@ function Services() {
                     height="486"
                     className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                     style={{ color: "transparent" }}
-                    src="https://images.unsplash.com/photo-1569144157591-c60f3f82f137"
+                    src="https://media.istockphoto.com/id/477736097/photo/inner-light.jpg?s=612x612&w=0&k=20&c=EwOPjXSkdl2bz1SpB3VhNcgDHJ51lvzQtWnjmvreTME="
                   />
                 </div>
               </div>

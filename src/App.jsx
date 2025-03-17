@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import { Route, Routes } from "react-router";
 import Layout from "./components/Layout";
 import Homepage from "../pages/Homepage";
+import Booking from "./components/Booking";
 function App() {
   return (
     <Routes>
@@ -18,6 +19,7 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/booking" element={<Booking />} />
         <Route path="/services" element={<Services />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
       </Route>
