@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { useState } from "react";
-
+import { databases } from "../appwrite/appwrite";
+import { ID } from "appwrite";
 export default function Contact() {
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
+    reset,
   } = useForm();
 
   const [selectedSubject, setSelectedSubject] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data) => {
+    try {
+      const response = await databases.createDocument(
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION_ID_CONTACT,
+        ID.unique(),
+        data
+      );
+      console.log("Document created:", response);
+      console.log("Form Data:", data);
+      setIsSubmitting(true);
+      setSuccessMessage("Message sent successfully!");
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSuccessMessage("");
+        reset();
+        setSelectedSubject("");
+      }, 3000);
+    } catch (error) {
+      console.error("Error creating document of contact", error);
+    }
   };
 
   const handleSubjectChange = (value) => {
@@ -33,16 +55,27 @@ export default function Contact() {
         <h2 className="text-3xl font-extrabold text-center text-white mb-6">
           Get in Touch
         </h2>
+        {successMessage && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.5 }}
+            className="absolute top-10 bg-green-500 text-white p-4 rounded shadow-lg"
+          >
+            Message sent successfully!
+          </motion.div>
+        )}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-white">Name</label>
             <input
-              placeholder="Enetr your name"
-              {...register("name", { required: "Name is required" })}
+              placeholder="Enter your name"
+              {...register("Name", { required: "Name is required" })}
               className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-700 bg-opacity-50 backdrop-blur-md text-white"
             />
             {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name.message}</p>
+              <p className="text-red-500 text-sm">{errors.Name.message}</p>
             )}
           </div>
 
@@ -111,9 +144,11 @@ export default function Contact() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
-            className="w-full py-3 text-white font-semibold bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-indigo-300 transition-all"
+            className={`w-full py-3 text-white font-semibold rounded-lg focus:ring-green-300 transition-all ${
+              isSubmitting ? "bg-green-700" : "bg-blue-700 hover:bg-green-800"
+            }`}
           >
-            Send Message
+            {isSubmitting ? "Message Sent" : "Send Message"}
           </motion.button>
         </form>
       </motion.div>
