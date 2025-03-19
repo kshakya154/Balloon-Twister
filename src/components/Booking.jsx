@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import { databases } from "../appwrite/appwrite";
+import { ID } from "appwrite";
 
 function Booking() {
   const {
@@ -23,14 +25,40 @@ function Booking() {
     "Baddi",
   ];
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setShowMessage(true);
-    setButtonConfirmed(true);
-    setTimeout(() => {
-      setShowMessage(false);
-      setButtonConfirmed(false);
-    }, 3000);
+  const onSubmit = async (data) => {
+    try {
+      // Formatting data to match Appwrite's required structure
+      const formattedData = {
+        Name: data.name, // Capitalized to match Appwrite field
+        email: data.email,
+        phone: data.phone,
+        event: data.eventType, // Matching Appwrite's schema
+        date: new Date(data.eventDate).toISOString(), // Convert to correct format
+        location: data.eventLocation,
+        types: data.services ? data.services.join(", ") : "", // Convert array to string
+        theme: data.theme || "",
+        "additional-demand": data.additionalRequests || "", // Match Appwrite field name
+      };
+
+      const response = await databases.createDocument(
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION_ID,
+        ID.unique(),
+        formattedData
+      );
+
+      console.log("Document created:", response);
+
+      // Show success message
+      setShowMessage(true);
+      setButtonConfirmed(true);
+      setTimeout(() => {
+        setShowMessage(false);
+        setButtonConfirmed(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Error creating document:", error);
+    }
   };
 
   return (
@@ -138,11 +166,11 @@ function Booking() {
             className="w-full p-3 rounded bg-gray-700 border border-gray-600"
           ></textarea>
 
-          <input
+          {/* <input
             type="file"
             {...register("images")}
             className="w-full p-3 bg-gray-700 border border-gray-600 rounded"
-          />
+          /> */}
 
           <button
             type="submit"

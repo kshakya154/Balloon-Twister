@@ -1,6 +1,7 @@
 import { div } from "framer-motion/client";
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 function Services() {
   return (
     <div>
@@ -43,12 +44,12 @@ function Services() {
                       match your theme and bring joy to every occasion
                     </p>
                     <div className="mt-6">
-                      <a
+                      <Link
                         className="inline-flex rounded-lg bg-blue-700 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-blue-800 "
-                        href="/login"
+                        to="/booking"
                       >
                         Book Now
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -102,12 +103,12 @@ function Services() {
                       unforgettable
                     </p>
                     <div className="mt-6">
-                      <a
+                      <Link
                         className="inline-flex rounded-lg bg-blue-700 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm  hover:bg-blue-800 "
-                        href="/login"
+                        to="/booking"
                       >
                         Book Now
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -160,12 +161,12 @@ function Services() {
                       your special event
                     </p>
                     <div className="mt-6">
-                      <a
+                      <Link
                         className="inline-flex rounded-lg bg-blue-700 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm   hover:bg-blue-800 "
-                        href="/login"
+                        to="/booking"
                       >
                         Book Now
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -23,14 +23,12 @@ function Home() {
             <Link
               to="/contact"
               class="uppercase rounded-sm bg-red-400 font-bold text-white px-8 py-4 mx-auto mr-4 hidden md:inline"
-              href="#contact-form"
             >
               Contact us
             </Link>
             <Link
               to="/booking"
               class="uppercase rounded-sm bg-green-400 font-bold text-white px-8 py-4 mx-auto hidden md:inline"
-              href="#about-me"
             >
               Book now
             </Link>

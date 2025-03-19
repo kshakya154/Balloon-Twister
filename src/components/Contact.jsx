@@ -28,20 +28,18 @@ export default function Contact() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-lg p-8 bg-white bg-opacity-30 backdrop-blur-2xl shadow-2xl rounded-2xl"
+        className="w-full max-w-lg p-8 bg-gray-800 bg-opacity-30 backdrop-blur-2xl shadow-2xl rounded-xl"
       >
-        <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-6">
+        <h2 className="text-3xl font-extrabold text-center text-white mb-6">
           Get in Touch
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
+            <label className="block text-sm font-medium text-white">Name</label>
             <input
               placeholder="Enetr your name"
               {...register("name", { required: "Name is required" })}
-              className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-50 bg-opacity-50 backdrop-blur-md"
+              className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-700 bg-opacity-50 backdrop-blur-md text-white"
             />
             {errors.name && (
               <p className="text-red-500 text-sm">{errors.name.message}</p>
@@ -49,7 +47,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-white">
               Email
             </label>
             <input
@@ -62,7 +60,7 @@ export default function Contact() {
                   message: "Enter a valid email",
                 },
               })}
-              className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-50 bg-opacity-50 backdrop-blur-md"
+              className="w-full p-3 mt-1 border rounded-lg focus:ring-1 focus:ring-indigo-400 focus:outline-none bg-gray-700 bg-opacity-50 backdrop-blur-md text-white"
             />
             {errors.email && (
               <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -70,7 +68,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Subject
             </label>
             <div className="flex space-x-4">
@@ -85,7 +83,7 @@ export default function Contact() {
                     onChange={() => handleSubjectChange(subject)}
                     className="form-radio h-5 w-5 text-indigo-600 focus:ring-indigo-400"
                   />
-                  <span className="text-gray-700">{subject}</span>
+                  <span className="text-white">{subject}</span>
                 </label>
               ))}
             </div>
@@ -95,13 +93,13 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-white">
               Message
             </label>
             <textarea
               placeholder="Enter message"
               {...register("message", { required: "Message is required" })}
-              className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-50 bg-opacity-50 backdrop-blur-md"
+              className="w-full p-3 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-gray-700 bg-opacity-50 backdrop-blur-md text-white"
               rows="4"
             ></textarea>
             {errors.message && (
