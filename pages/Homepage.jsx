@@ -5,6 +5,7 @@ import Services from "../src/components/Services";
 import About from "../src/components/About";
 import Testimonial from "../src/components/Testimonial";
 import { motion } from "framer-motion";
+import FAQ from "../src/components/FAQ";
 function Homepage() {
   return (
     <div>
@@ -18,6 +19,7 @@ function Homepage() {
         <Services></Services>
         <Testimonial></Testimonial>
         <About></About>
+        <FAQ></FAQ>
       </motion.div>
     </div>
   );

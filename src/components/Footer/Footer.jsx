@@ -21,18 +21,18 @@ function Footer() {
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Resources
+                  Quick Links
                 </h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
-                    <a href="https://flowbite.com/" class="hover:underline">
-                      Flowbite
-                    </a>
+                    <Link to="/contact" class="hover:underline">
+                      Contact
+                    </Link>
                   </li>
                   <li>
-                    <a href="https://tailwindcss.com/" class="hover:underline">
-                      Tailwind CSS
-                    </a>
+                    <Link to="/about" class="hover:underline">
+                      About us
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -43,7 +43,8 @@ function Footer() {
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
                     <a
-                      href="https://github.com/themesberg/flowbite"
+                      href="https://github.com/kshakya154"
+                      target="_blank"
                       class="hover:underline "
                     >
                       Github
@@ -51,7 +52,8 @@ function Footer() {
                   </li>
                   <li>
                     <a
-                      href="https://discord.gg/4eeurUVvTy"
+                      href="https://discord.com/"
+                      target="_blank"
                       class="hover:underline"
                     >
                       Discord
@@ -65,14 +67,10 @@ function Footer() {
                 </h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
-                    <a href="#" class="hover:underline">
-                      Privacy Policy
-                    </a>
+                    <a class="hover:underline">Privacy Policy</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:underline">
-                      Terms &amp; Conditions
-                    </a>
+                    <a class="hover:underline">Terms &amp; Conditions</a>
                   </li>
                 </ul>
               </div>
@@ -82,16 +80,13 @@ function Footer() {
           <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2025{" "}
-              <a href="https://flowbite.com/" class="hover:underline">
+              <Link to="/" class="hover:underline">
                 Balloon Twister™
-              </a>
+              </Link>
               . All Rights Reserved.
             </span>
             <div class="flex mt-4 sm:justify-center sm:mt-0">
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-              >
+              <a class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                 <svg
                   class="w-4 h-4"
                   aria-hidden="true"
@@ -107,10 +102,7 @@ function Footer() {
                 </svg>
                 <span class="sr-only">Facebook page</span>
               </a>
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
+              <a class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                 <svg
                   class="w-4 h-4"
                   aria-hidden="true"
@@ -122,10 +114,7 @@ function Footer() {
                 </svg>
                 <span class="sr-only">Discord community</span>
               </a>
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
+              <a class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                 <svg
                   class="w-4 h-4"
                   aria-hidden="true"
@@ -141,10 +130,7 @@ function Footer() {
                 </svg>
                 <span class="sr-only">Twitter page</span>
               </a>
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
+              <a class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                 <svg
                   class="w-4 h-4"
                   aria-hidden="true"
@@ -160,10 +146,7 @@ function Footer() {
                 </svg>
                 <span class="sr-only">GitHub account</span>
               </a>
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
+              <a class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                 <svg
                   class="w-4 h-4"
                   aria-hidden="true"

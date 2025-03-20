@@ -145,7 +145,7 @@ export default function Contact() {
             whileTap={{ scale: 0.95 }}
             type="submit"
             className={`w-full py-3 text-white font-semibold rounded-lg focus:ring-green-300 transition-all ${
-              isSubmitting ? "bg-green-700" : "bg-blue-700 hover:bg-green-800"
+              isSubmitting ? "bg-green-700" : "bg-blue-700 hover:bg-blue-800"
             }`}
           >
             {isSubmitting ? "Message Sent" : "Send Message"}
