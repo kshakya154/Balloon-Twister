@@ -14,6 +14,8 @@ import Homepage from "../pages/Homepage";
 import Booking from "./components/Booking";
 import Blog from "./components/Blog/Blog";
 import AdminLogin from "./components/AdminLogin";
+import AddBlog from "./components/Blog/AddBlog";
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <Routes>
@@ -25,6 +27,18 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
+        {/* <Route path="/addblog" element={<AddBlog />} /> */}
+        <Route path="/admin-login" element={<AdminLogin />} />
+
+        {/* Protect the /addblog route */}
+        <Route
+          path="/addblog"
+          element={
+            <ProtectedRoute>
+              <AddBlog />
+            </ProtectedRoute>
+          }
+        />
       </Route>
     </Routes>
   );

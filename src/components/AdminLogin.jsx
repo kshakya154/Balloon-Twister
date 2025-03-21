@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
 
 function AdminLogin() {
+  const [errormessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -10,8 +13,12 @@ function AdminLogin() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Admin Logged In:", data);
-    // Handle authentication logic here
+    if (data.email === "admin@example.com" && data.password === "admin123") {
+      localStorage.setItem("isAdminAuthenticated", "true"); // ✅ Store login status
+      navigate("/addblog"); // Redirect on success
+    } else {
+      setErrorMessage("Invalid email or password!");
+    }
   };
 
   return (
@@ -69,7 +76,9 @@ function AdminLogin() {
               </p>
             )}
           </motion.div>
-
+          {errormessage && (
+            <p className="text-red-500 text-sm text-center">{errormessage}</p>
+          )}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
