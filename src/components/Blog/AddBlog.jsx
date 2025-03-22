@@ -1,18 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Client, ID } from "appwrite"; // ✅ Added missing ID import
+import { Client, ID } from "appwrite";
 import RTE from "../RTE/RTE";
+import { databases, storage } from "../../appwrite/appwrite"; // Import Appwrite Storage
 
 function AddBlog() {
   const navigate = useNavigate();
-  const [imageId, setImageId] = useState("");
-
-  // Initialize Appwrite Client
-  const client = new Client();
-  client
-    .setEndpoint("https://cloud.appwrite.io/v1") // Replace with your Appwrite endpoint
-    .setProject("YOUR_PROJECT_ID"); // Replace with your Appwrite project ID
+  const [loading, setLoading] = useState(false);
+  const [buttonText, setButtonText] = useState("Submit");
+  const [buttonColor, setButtonColor] = useState(
+    "bg-blue-500 hover:bg-blue-600"
+  );
+  const [errorMessage, setErrorMessage] = useState(""); // Store error message
 
   const {
     register,
@@ -27,17 +27,64 @@ function AddBlog() {
     navigate("/admin-login");
   };
 
-  const onSubmit = (data) => {
-    const generatedImageId = ID.unique(); // Generate Appwrite Unique ID
-    setImageId(generatedImageId);
+  const onSubmit = async (data) => {
+    setLoading(true);
+    setButtonText("Submitting...");
+    setErrorMessage(""); // Clear previous error messages
 
-    const formData = {
-      ...data,
-      imageId: generatedImageId,
-    };
+    try {
+      let uploadedImageUrl = "";
 
-    console.log("Form Data:", formData);
-    alert("Form submitted successfully!");
+      if (data.image && data.image[0]) {
+        const file = data.image[0];
+
+        // Upload Image to Appwrite Storage
+        const uploadedFile = await storage.createFile(
+          import.meta.env.VITE_APPWRITE_BUCKET_ID_BLOG,
+          ID.unique(),
+          file
+        );
+
+        // Get Image URL
+        uploadedImageUrl = storage.getFilePreview(
+          import.meta.env.VITE_APPWRITE_BUCKET_ID_BLOG,
+          uploadedFile.$id
+        );
+      } else {
+        throw new Error("Please upload an image.");
+      }
+
+      // Save blog post
+      await databases.createDocument(
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION_ID_BLOG,
+        ID.unique(),
+        {
+          title: data.title,
+          content: data.content,
+          featuredImage: uploadedImageUrl,
+        }
+      );
+
+      console.log("Blog added successfully!");
+
+      // Show success message
+      setButtonText("Blog added successfully!");
+      setButtonColor("bg-green-500 hover:bg-green-600");
+
+      // Reset after 2 seconds
+      setTimeout(() => {
+        setButtonText("Submit");
+        setButtonColor("bg-blue-500 hover:bg-blue-600");
+      }, 2000);
+    } catch (error) {
+      console.error("Error while adding blog:", error);
+      setErrorMessage(
+        error.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -90,21 +137,47 @@ function AddBlog() {
             )}
           </div>
 
+          {/* Error Message */}
+          {errorMessage && (
+            <div className="bg-red-500 text-white p-3 rounded-md text-center">
+              {errorMessage}
+            </div>
+          )}
+
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition"
+            className={`w-full text-white font-semibold py-3 rounded-lg transition ${buttonColor}`}
+            disabled={loading}
           >
-            Submit
+            {loading ? (
+              <div className="flex justify-center items-center">
+                <svg
+                  className="animate-spin h-5 w-5 mr-2 text-white"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    fill="none"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  />
+                </svg>
+                Submitting...
+              </div>
+            ) : (
+              buttonText
+            )}
           </button>
         </form>
-
-        {/* Display Unique Image ID */}
-        {imageId && (
-          <p className="text-green-400 text-sm mt-4 text-center">
-            Image ID: <strong>{imageId}</strong>
-          </p>
-        )}
       </div>
 
       {/* Logout Button */}
